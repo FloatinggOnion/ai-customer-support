@@ -22,21 +22,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${inter.className} flex flex-col h-screen`}>
-          <SignedIn>
             <Header />
             <div className="flex flex-grow">
-              <Sidebar />
-              <main className="flex-grow bg-gray-50 p-4">
-                <Chat />
                 {children}
-              </main>
             </div>
-          </SignedIn>
-          <SignedOut>
-            <div className="flex justify-center items-center h-screen">
-              <SignIn />
-            </div>
-          </SignedOut>
         </body>
       </html>
     </ClerkProvider>
