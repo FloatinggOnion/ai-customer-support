@@ -1,5 +1,4 @@
-import {NextResponse} from 'next/server' // Import NextResponse from Next.js for handling responses
-import { NextApiRequest } from 'next';
+import { NextRequest, NextResponse } from 'next/server' // Import NextResponse from Next.js for handling responses
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -14,7 +13,7 @@ const systemPrompt = "You are a customer support agent for a tech company. The u
 
 // POST function to handle incoming requests
 
-export async function POST(req: NextApiRequest & { json: () => Promise<any> }) {
+export async function POST(req: NextRequest) {
   const data = await req.json() // Parse the JSON body of the incoming request
 
   // Create a chat completion request to the Gemini API
@@ -33,7 +32,6 @@ export async function POST(req: NextApiRequest & { json: () => Promise<any> }) {
 
   // Create a ReadableStream to handle the streaming response
   const result = await chat.sendMessage(data); // Send the user's message to the chat completion model
-  console.log(result);
 
   return new NextResponse(result?.response?.text()) // Return the stream as the response
 }
