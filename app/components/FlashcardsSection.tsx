@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchFlashcards } from "../../lib/api";
+import { fetchFlashcards } from "../lib/api";
 
 interface Flashcard {
   question: string;

@@ -6,7 +6,9 @@ type Props = {}
 
 const page = (props: Props) => {
   return (
-    <UserProfile path="/profile" />
+    <div className="flex flex-col justify-center items-center">
+      <UserProfile path="/profile" />
+    </div>
   )
 }
 

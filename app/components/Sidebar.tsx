@@ -7,10 +7,12 @@ import {
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
+	SheetFooter
 } from "@/components/ui/sheet";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, SignOutButton } from "@clerk/nextjs";
 
-import { HomeIcon, AlignJustify } from "lucide-react";
+import { AlignJustify } from "lucide-react";
+import Link from "next/link";
 
 type Props = {};
 
@@ -27,6 +29,13 @@ const Sidebar = (props: Props) => {
 						Navigation Menu
 					</SheetDescription>
 				</SheetHeader>
+				<div className="my-12 flex flex-col gap-2 h-full">
+					<Link href={"/"} className="py-4 px-1 rounded-md hover:bg-neutral-200">Home</Link>
+					<Link href={"/profile"} className="py-4 px-1 rounded-md hover:bg-neutral-200">Profile</Link>
+				</div>
+				<SheetFooter>
+					<SignOutButton />
+				</SheetFooter>
 			</SheetContent>
 		</Sheet>
 	);
