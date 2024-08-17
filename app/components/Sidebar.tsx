@@ -22,7 +22,7 @@ const Sidebar = (props: Props) => {
             </SheetTrigger>
 			<SheetContent className="w-[300px] sm:w-[350px]" side={"left"}>
 				<SheetHeader>
-					<SheetTitle className="text-2xl font-bold">ClarityAI</SheetTitle>
+					<SheetTitle className="text-2xl font-bold">Brain Deck</SheetTitle>
 					<SheetDescription>
 						Navigation Menu
 					</SheetDescription>

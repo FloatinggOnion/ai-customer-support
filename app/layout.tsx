@@ -4,15 +4,15 @@ import { ClerkProvider, SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
 
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
-import Chat from "./components/Chat";
+import FlashcardsSection from "./components/FlashcardsSection"; 
 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Clarity AI - Customer Support",
-  description: "AI-powered customer support for clarity and assistance.",
+  title: "Brain Deck",
+  description: "An AI-powered flashcard tool to boost your learning with smart, adaptive content and seamless Stripe payments.",
 };
 
 export default function RootLayout({
@@ -26,8 +26,8 @@ export default function RootLayout({
             <Header />
             <div className="flex flex-grow">
               <Sidebar />
-              <main className="flex-grow bg-gray-50 p-4">
-                <Chat />
+              <main className="flex-grow bg-gray-50 p-4 overflow-y-auto">
+                <FlashcardsSection />
                 {children}
               </main>
             </div>
